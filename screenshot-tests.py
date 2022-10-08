@@ -114,10 +114,12 @@ def tester():
 
 #run_sasview()
 
-with subprocess.Popen("sasview") as proc:
+cmd = [
+    os.environ.get("RUN_SASVIEW", "sasview"),
+]
+
+with subprocess.Popen(cmd) as proc:
     tester()
     proc.terminate()
     sleep(1)
     proc.kill()
-
-
