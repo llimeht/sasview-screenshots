@@ -47,12 +47,12 @@ def tester():
 
         try:
             waitfor("prompts/splashscreen.png")
-            pyautogui.screenshot('00-splash.png')
+            pyautogui.screenshot('output/00-splash.png')
         except LocationError:
             logger.warning("Splash screen not detected")
 
         sleep(2.0)
-        pyautogui.screenshot('00-mainwindow.png')
+        pyautogui.screenshot('output/00-mainwindow.png')
 
         sleep(1.0)
         logger.info("Open data file")
@@ -62,12 +62,12 @@ def tester():
         pyautogui.write('sphere_80.txt')
         pyautogui.press('enter')
         sleep(0.5)
-        pyautogui.screenshot('01-data-loaded-1.png')
+        pyautogui.screenshot('output/01-data-loaded-1.png')
 
         loc = waitfor("prompts/data-explorer-send-data-to.png")
         pyautogui.click(*loc)
         sleep(1.0)
-        pyautogui.screenshot('01-data-loaded-2.png')
+        pyautogui.screenshot('output/01-data-loaded-2.png')
 
         # select sphere model
         loc = waitfor("prompts/fitpanel-model-category.png")
